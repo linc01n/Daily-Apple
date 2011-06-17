@@ -35,6 +35,7 @@ Credit
 ### Javascript Library
 
 [jQuery](http://jquery.com/) - New Wave JavaScript
+
 [AJAX Queue/Cache/Abort/Block Manager](http://www.protofunc.com/scripts/jquery/ajaxManager/)
 
 ### Image
