@@ -1,4 +1,4 @@
-Copyright (c) 2011 Lincoln Lee, https://github.com/linc01n/Daily-Apple
+Copyright (c) 2011 Lincoln Lee, http://linc01n.github.com/Daily-Apple/
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
