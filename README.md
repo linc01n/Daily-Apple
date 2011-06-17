@@ -32,6 +32,12 @@ You may use Daily Apple under the terms of the MIT License and the GNU General P
 Credit
 ------
 
+### Javascript Library
+
+[jQuery](http://jquery.com/) - New Wave JavaScript
+[AJAX Queue/Cache/Abort/Block Manager](http://www.protofunc.com/scripts/jquery/ajaxManager/)
+
+### Image
 Icon photo is taken by coffee bee.
 [Flickr Link](http://www.flickr.com/photos/coffee_bee/4042343280/)
 This photo is under [Creative Commons Attribution-NonCommercial 2.0 Generic (CC BY-NC 2.0)](http://creativecommons.org/licenses/by-nc/2.0/)
