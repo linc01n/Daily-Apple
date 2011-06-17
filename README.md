@@ -20,7 +20,8 @@ TODO
 Changelog
 ---------
 
-1.0 Initial release
+1.0.1	Remove souce photo from code
+1.0		Initial release
 
 License
 -------
