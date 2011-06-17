@@ -1,0 +1,20 @@
+{
+  "name": "Daily Apple",
+  "version": "1.0",
+  "description": "Load Apple Daily News in one page",
+  "icons": 
+  {
+	"16": "icon_16.png",
+	"48": "icon_48.png",
+	"128": "icon_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://hk.apple.nextmedia.com/template/apple*/art_main.php?*"],
+      "js": ["jquery-1.6.1.min.js","jquery.ajaxmanager.js","da.js"]
+    }
+  ],
+  "permissions": [
+	"http://hk.apple.nextmedia.com/template/apple*/art_main.php?*"
+  ]
+}
