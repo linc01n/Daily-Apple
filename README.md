@@ -20,7 +20,7 @@ TODO
 Changelog
 ---------
 
-1.0.1	Remove souce photo from code
+1.0.1	Remove source photo from code folder
 
 1.0		Initial release
 
