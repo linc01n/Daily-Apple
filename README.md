@@ -16,6 +16,7 @@ TODO
 
 1. Add hitrate calculation on each article.
 2. Add Google Analytics.
+3. Write User Manual
 
 Changelog
 ---------
