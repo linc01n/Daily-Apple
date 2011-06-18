@@ -38,7 +38,7 @@
     // issue date of the news
     var iss_id = $("input[name=issue_id]").val();
     // array of all news id and link info
-    var news = Array();
+    var news = [];
     // maximum 2 simultaneous ajax request at a time
     var someManagedAjax = $.manageAjax.create('fetchQ', {
         queue: true,
@@ -86,7 +86,7 @@
 
                     // add horizontal line
                     var seperator = $("<div>");
-                    seperator.css(sep_css)
+                    seperator.css(sep_css);
                     $(node).append(seperator);
                 
                 },
