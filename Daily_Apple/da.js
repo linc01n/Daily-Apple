@@ -46,6 +46,10 @@
         maxRequests: 2
     });
     
+    var loc_uri = new jsUri(window.location.href);
+    if(loc_uri.toString().indexOf("#") != -1){
+        window.location = loc_uri.toString()+"#"+loc_uri.getQueryParamValue("art_id");
+    }
     $('#sltArticleMenu optgroup').each(function() {
         // build yellow block of title from optgroup
         var cat = $('<div>');
@@ -56,9 +60,10 @@
             // parse it to json format and remove type
             news[index] = JSON.parse($(this).attr('value').replace(/'/gi, '"').replace(/type:"t",/, '').replace(/sec_id/, '"sec_id"').replace(/subsec_id/, '"subsec_id"').replace(/art_id/, '"art_id"').replace(/cat_id/, '"cat_id"').replace(/coln_id/, '"coln_id"').replace(/,"cat_id":"0"/, '').replace(/,"coln_id":"0"/, ''));
             news[index].iss_id = iss_id;
-            // build div by article id
+            // build div by article id and give name for fast bookmark jump
             var node = $('<div>');
             $(node).attr('id', news[index].art_id);
+            $(node).attr('name', news[index].art_id);
             $(cat).append(node);
             // ajax request
             $.manageAjax.add('fetchQ', {success: function(data) {
