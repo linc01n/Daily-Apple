@@ -40,16 +40,14 @@
     // array of all news id and link info
     var news = [];
     // maximum 2 simultaneous ajax request at a time
-    var someManagedAjax = $.manageAjax.create('fetchQ', {
+    var ManagedAjax = $.manageAjax.create('fetchQ', {
         queue: true,
         cacheResponse: true,
         maxRequests: 2
     });
     
-    var loc_uri = new jsUri(window.location.href);
-    if(loc_uri.toString().indexOf("#") == -1){
-        window.location = loc_uri.toString()+"#"+loc_uri.getQueryParamValue("art_id");
-    }
+    var loc_article = (new jsUri(window.location.href)).getQueryParamValue("art_id");
+    ManagedAjax.AjaxComplete(function(){ window.scrollTo($("#"+loc_article).location().left,$("#"+loc_article).location().top);});
     $('#sltArticleMenu optgroup').each(function() {
         // build yellow block of title from optgroup
         var cat = $('<div>');
