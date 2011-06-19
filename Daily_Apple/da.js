@@ -47,7 +47,7 @@
     });
     
     var loc_uri = new jsUri(window.location.href);
-    if(loc_uri.toString().indexOf("#") != -1){
+    if(loc_uri.toString().indexOf("#") == -1){
         window.location = loc_uri.toString()+"#"+loc_uri.getQueryParamValue("art_id");
     }
     $('#sltArticleMenu optgroup').each(function() {
