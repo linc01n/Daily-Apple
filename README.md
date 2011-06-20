@@ -17,16 +17,17 @@ TODO
 1. Add hitrate calculation on each article.
 2. Add Google Analytics.
 3. Write User Manual.
-4. Add Bookmark inside the page.
 
 Changelog
 ---------
 
-1.0.2   Typo fix
+1.0.3       Jump to the news of address bar
 
-1.0.1	Remove source photo from code folder
+1.0.2       Typo fix
 
-1.0		Initial release
+1.0.1       Remove source photo from code folder
+
+1.0         Initial release
 
 License
 -------
