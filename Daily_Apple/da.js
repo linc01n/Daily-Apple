@@ -33,22 +33,30 @@
         "float": "left",
         "margin-right": "15px !important "
     };
+    var top_css = {
+        "position": "relative",
+        "right": "-800px"
+    };
     // remove all javascript on the page
     $("script").remove();
+
+    // Name the top location
+    $("#siteHeader").attr("name", "top");
+
     // issue date of the news
     var iss_id = $("input[name=issue_id]").val();
     // array of all news id and link info
     var news = [];
-    // maximum 2 simultaneous ajax request at a time
+    // maximum 5 simultaneous ajax request at a time
     var ManagedAjax = $.manageAjax.create('fetchQ', {
         queue: true,
         cacheResponse: true,
-        maxRequests: 2
+        maxRequests: 5
     });
     var loc_article = (new jsUri(window.location.href)).getQueryParamValue("art_id");
     
-    $(document).bind("fetchQAjaxComplete", function() {
-        var art = $("#"+loc_article);
+    $(document).bind("fetchQAjaxStop", function() {
+        var art = $("#" + loc_article);
         window.scrollTo(art.position().left, art.position().top);
     });
     $('#sltArticleMenu optgroup').each(function() {
@@ -67,12 +75,17 @@
             $(cat).append(node);
             // ajax request
             $.manageAjax.add('fetchQ', {success: function(data) {
+                    // create a back to top link
+                    var top = $("<a>");
+                    top.attr("href", "#top");
+                    top.text("Back to Top");
+                    top.css(top_css);
                     // remove loading image
                     $(node).css("text-align", "");
                     $(node).find("img").remove();
                     $(data).find("script").remove();
                     // extract news content and photo
-                    $(node).append($(data).find("#articleTitle"));
+                    $(node).append($(data).find("#articleTitle").append(top));
                     var introp = $($(data).find("#articleIntroPhoto noscript").text());
                     $(node).append($(data).find("#articleContent"));
                     if ($(node).find(".adArticleLeft").hasClass("adArticleLeft")) {

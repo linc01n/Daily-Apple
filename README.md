@@ -17,9 +17,12 @@ TODO
 1. Add hitrate calculation on each article.
 2. Add Google Analytics.
 3. Write User Manual.
+4. Add a loading screen.
 
 Changelog
 ---------
+
+1.0.4		Add Back to top link
 
 1.0.3       Jump to the news of address bar
 
