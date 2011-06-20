@@ -45,9 +45,12 @@
         cacheResponse: true,
         maxRequests: 2
     });
-    
     var loc_article = (new jsUri(window.location.href)).getQueryParamValue("art_id");
-    ManagedAjax.AjaxComplete(function(){ window.scrollTo($("#"+loc_article).location().left,$("#"+loc_article).location().top);});
+    
+    $(document).bind("fetchQAjaxComplete", function() {
+        var art = $("#"+loc_article);
+        window.scrollTo(art.position().left, art.position().top);
+    });
     $('#sltArticleMenu optgroup').each(function() {
         // build yellow block of title from optgroup
         var cat = $('<div>');
@@ -61,7 +64,6 @@
             // build div by article id and give name for fast bookmark jump
             var node = $('<div>');
             $(node).attr('id', news[index].art_id);
-            $(node).attr('name', news[index].art_id);
             $(cat).append(node);
             // ajax request
             $.manageAjax.add('fetchQ', {success: function(data) {
