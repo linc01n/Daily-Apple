@@ -1,4 +1,4 @@
- // avoid javascript namespace pollution
+﻿ // avoid javascript namespace pollution
 (function() {
 
     // css variable
@@ -35,7 +35,11 @@
     };
     var top_css = {
         "position": "relative",
-        "right": "-800px"
+        "right": "-760px"
+    };
+	var perm_css = {
+        "position": "relative",
+        "right": "-750px"
     };
     // remove all javascript on the page
     $("script").remove();
@@ -53,7 +57,9 @@
         cacheResponse: true,
         maxRequests: 5
     });
-    var loc_article = (new jsUri(window.location.href)).getQueryParamValue("art_id");
+	
+	var location = new jsUri(window.location.href);
+    var loc_article = location.getQueryParamValue("art_id");
     
     $(document).bind("fetchQAjaxStop", function() {
         var art = $("#" + loc_article);
@@ -75,17 +81,36 @@
             $(cat).append(node);
             // ajax request
             $.manageAjax.add('fetchQ', {success: function(data) {
+					// content div
+					var content = $(data).find("#articleTitle");
+					// create a permlink
+					var perm = $("<a>");
+					var p_link = location.clone().setQuery('');
+					p_link.addQueryParam('sec_id', news[index].sec_id);
+					p_link.addQueryParam('subsec_id', news[index].subsec_id);
+					p_link.addQueryParam('art_id', news[index].art_id);
+					if(typeof(news[index].cat_id) != "undefined"){
+						p_link.addQueryParam('cat_id', news[index].cat_id);
+					}
+					if(typeof(news[index].coln_id) != "undefined"){
+						p_link.addQueryParam('coln_id', news[index].coln_id);
+					}
+					perm.attr("href",p_link.toString());
+					perm.text("原文連結");
+					perm.css(perm_css);
+					content.append(perm);
                     // create a back to top link
                     var top = $("<a>");
                     top.attr("href", "#top");
                     top.text("Back to Top");
                     top.css(top_css);
+					content.append(top);
                     // remove loading image
                     $(node).css("text-align", "");
                     $(node).find("img").remove();
                     $(data).find("script").remove();
                     // extract news content and photo
-                    $(node).append($(data).find("#articleTitle").append(top));
+                    $(node).append(content);
                     var introp = $($(data).find("#articleIntroPhoto noscript").text());
                     $(node).append($(data).find("#articleContent"));
                     if ($(node).find(".adArticleLeft").hasClass("adArticleLeft")) {

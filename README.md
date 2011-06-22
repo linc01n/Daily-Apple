@@ -22,6 +22,8 @@ TODO
 Changelog
 ---------
 
+1.0.5		Add permlink for each article
+
 1.0.4		Add Back to top link
 
 1.0.3       Jump to the news of address bar
