@@ -86,6 +86,7 @@
 					// create a permlink
 					var perm = $("<a>");
 					var p_link = location.clone().setQuery('');
+					p_link.addQueryParam('iss_id', news[index].iss_id);
 					p_link.addQueryParam('sec_id', news[index].sec_id);
 					p_link.addQueryParam('subsec_id', news[index].subsec_id);
 					p_link.addQueryParam('art_id', news[index].art_id);
