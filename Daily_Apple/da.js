@@ -37,7 +37,7 @@
         "position": "relative",
         "right": "-760px"
     };
-	var perm_css = {
+    var perm_css = {
         "position": "relative",
         "right": "-750px"
     };
@@ -57,13 +57,16 @@
         cacheResponse: true,
         maxRequests: 5
     });
-	
-	var location = new jsUri(window.location.href);
+    
+    var location = new jsUri(window.location.href);
     var loc_article = location.getQueryParamValue("art_id");
     
     $(document).bind("fetchQAjaxStop", function() {
         var art = $("#" + loc_article);
         window.scrollTo(art.position().left, art.position().top);
+		
+		//remove new ad script
+		$("script").remove();
     });
     $('#sltArticleMenu optgroup').each(function() {
         // build yellow block of title from optgroup
@@ -77,36 +80,36 @@
             news[index].iss_id = iss_id;
             // build div by article id and give name for fast bookmark jump
             var node = $('<div>');
-			$(node).attr('class', "article");
+            $(node).attr('class', "article");
             $(node).attr('id', news[index].art_id);
             $(cat).append(node);
             // ajax request
             $.manageAjax.add('fetchQ', {success: function(data) {
-					// title div
-					var title = $(data).find("#articleTitle");
-					// create a permlink
-					var perm = $("<a>");
-					var p_link = location.clone().setQuery('');
-					p_link.addQueryParam('iss_id', news[index].iss_id);
-					p_link.addQueryParam('sec_id', news[index].sec_id);
-					p_link.addQueryParam('subsec_id', news[index].subsec_id);
-					p_link.addQueryParam('art_id', news[index].art_id);
-					if(typeof(news[index].cat_id) != "undefined"){
-						p_link.addQueryParam('cat_id', news[index].cat_id);
-					}
-					if(typeof(news[index].coln_id) != "undefined"){
-						p_link.addQueryParam('coln_id', news[index].coln_id);
-					}
-					perm.attr("href",p_link.toString());
-					perm.text("原文連結");
-					perm.css(perm_css);
-					title.append(perm);
+                    // title div
+                    var title = $(data).find("#articleTitle");
+                    // create a permlink
+                    var perm = $("<a>");
+                    var p_link = location.clone().setQuery('');
+                    p_link.addQueryParam('iss_id', news[index].iss_id);
+                    p_link.addQueryParam('sec_id', news[index].sec_id);
+                    p_link.addQueryParam('subsec_id', news[index].subsec_id);
+                    p_link.addQueryParam('art_id', news[index].art_id);
+                    if (typeof (news[index].cat_id) != "undefined") {
+                        p_link.addQueryParam('cat_id', news[index].cat_id);
+                    }
+                    if (typeof (news[index].coln_id) != "undefined") {
+                        p_link.addQueryParam('coln_id', news[index].coln_id);
+                    }
+                    perm.attr("href", p_link.toString());
+                    perm.text("原文連結");
+                    perm.css(perm_css);
+                    title.append(perm);
                     // create a back to top link
                     var top = $("<a>");
                     top.attr("href", "#top");
                     top.text("Back to Top");
                     top.css(top_css);
-					title.append(top);
+                    title.append(top);
                     // remove loading image
                     $(node).css("text-align", "");
                     $(node).find("img").remove();
@@ -124,7 +127,7 @@
                     $('.videoPanel').remove();
                     $('.feedbackAD').remove();
                     $('#articleSelect').remove();
-					$('.article>a').remove();
+                    $('.article>a').remove();
                     // add css style to node
                     $(node).find('h1').css(title_css);
                     $(node).find('p').css(p_css);
