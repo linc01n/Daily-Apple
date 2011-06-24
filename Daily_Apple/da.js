@@ -77,12 +77,13 @@
             news[index].iss_id = iss_id;
             // build div by article id and give name for fast bookmark jump
             var node = $('<div>');
+			$(node).attr('class', "article");
             $(node).attr('id', news[index].art_id);
             $(cat).append(node);
             // ajax request
             $.manageAjax.add('fetchQ', {success: function(data) {
-					// content div
-					var content = $(data).find("#articleTitle");
+					// title div
+					var title = $(data).find("#articleTitle");
 					// create a permlink
 					var perm = $("<a>");
 					var p_link = location.clone().setQuery('');
@@ -99,19 +100,19 @@
 					perm.attr("href",p_link.toString());
 					perm.text("原文連結");
 					perm.css(perm_css);
-					content.append(perm);
+					title.append(perm);
                     // create a back to top link
                     var top = $("<a>");
                     top.attr("href", "#top");
                     top.text("Back to Top");
                     top.css(top_css);
-					content.append(top);
+					title.append(top);
                     // remove loading image
                     $(node).css("text-align", "");
                     $(node).find("img").remove();
                     $(data).find("script").remove();
                     // extract news content and photo
-                    $(node).append(content);
+                    $(node).append(title);
                     var introp = $($(data).find("#articleIntroPhoto noscript").text());
                     $(node).append($(data).find("#articleContent"));
                     if ($(node).find(".adArticleLeft").hasClass("adArticleLeft")) {
@@ -123,6 +124,7 @@
                     $('.videoPanel').remove();
                     $('.feedbackAD').remove();
                     $('#articleSelect').remove();
+					$('.article>a').remove();
                     // add css style to node
                     $(node).find('h1').css(title_css);
                     $(node).find('p').css(p_css);
