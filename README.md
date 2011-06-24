@@ -50,6 +50,8 @@ Credit
 
 [AJAX Queue/Cache/Abort/Block Manager](http://www.protofunc.com/scripts/jquery/ajaxManager/)
 
+[jsuri](http://code.google.com/p/jsuri/) - Fluent javascript uri/url parsing and manipulation
+
 ### Image
 Icon photo is taken by coffee bee.
 [Flickr Link](http://www.flickr.com/photos/coffee_bee/4042343280/)
