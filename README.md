@@ -22,7 +22,7 @@ TODO
 Changelog
 ---------
 
-1.0.6		Fix removal new link
+1.0.6		Fix removal new Ad
 
 1.0.5		Add permlink for each article
 
