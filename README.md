@@ -22,6 +22,8 @@ TODO
 Changelog
 ---------
 
+1.0.7		Fix loading wrong optgroup
+
 1.0.6		Fix removal new Ad
 
 1.0.5		Add permlink for each article
