@@ -10,11 +10,11 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://hk.apple.nextmedia.com/template/apple*/art_main.php?*"],
-      "js": ["jquery-1.6.1.min.js","jquery.ajaxmanager.js","jsuri-1.1.0.min.js","da.js"]
+      "matches": ["http://hk.apple.nextmedia.com/*/index/"],
+      "js": ["lib/require.2.1.2-min.js","da.js"]
     }
   ],
   "permissions": [
-	"http://hk.apple.nextmedia.com/template/apple*/art_main.php?*"
+	"http://hk.apple.nextmedia.com/*/index/"
   ]
 }
