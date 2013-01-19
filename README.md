@@ -41,7 +41,7 @@ Changelog
 License
 -------
 
-You may use Daily Apple under the terms of the MIT License and the GNU General Public License (GPL) Version 2
+You may use Daily Apple under the terms of the MIT License
 
 Credit
 ------
@@ -61,8 +61,8 @@ This photo is under [Creative Commons Attribution-NonCommercial 2.0 Generic (CC 
 
 Disclaimer
 ----------
-This disclaimer governs your use of our extensions; by using our extensions, you accept this disclaimer in full. If you disagree with any part of this disclaimer, do not use our extensions. We reserve the right to modify these terms at any time. You should therefore check periodically for changes. By using this extensions after we post any changes, you agree to accept those changes, whether or not you have reviewed them. 
-We are not responsible for the contents or reliability of the content which show by the extensions and do not necessarily endorse the views expressed within them. 
-We do not warrant that functions available on the extensions will be uninterrupted or error free, that defects will be corrected, or that the server that makes it available is free of viruses or bugs. You acknowledge that it is your responsibility to implement sufficient procedures and virus checks (including anti-virus and other security checks) to satisfy your particular requirements for the accuracy of data input and output. 
-This extensions may include portions of third-party data. For third-party copyright notices and license terms, please refer to nextmedia.com. 
+This disclaimer governs your use of our extensions; by using our extensions, you accept this disclaimer in full. If you disagree with any part of this disclaimer, do not use our extensions. We reserve the right to modify these terms at any time. You should therefore check periodically for changes. By using this extensions after we post any changes, you agree to accept those changes, whether or not you have reviewed them.
+We are not responsible for the contents or reliability of the content which show by the extensions and do not necessarily endorse the views expressed within them.
+We do not warrant that functions available on the extensions will be uninterrupted or error free, that defects will be corrected, or that the server that makes it available is free of viruses or bugs. You acknowledge that it is your responsibility to implement sufficient procedures and virus checks (including anti-virus and other security checks) to satisfy your particular requirements for the accuracy of data input and output.
+This extensions may include portions of third-party data. For third-party copyright notices and license terms, please refer to nextmedia.com.
 The Software Is Provided "As Is", Without Warranty Of Any Kind, Express Or Implied, Including But Not Limited To The Warranties Of Merchantability, Fitness For A Particular Purpose And Noninfringement. In No Event Shall The Authors Or Copyright Holders Be Liable For Any Claim, Damages Or Other Liability, Whether In An Action Of Contract, Tort Or Otherwise, Arising From, Out Of Or In Connection With The Software Or The Use Or Other Dealings In The Software.
