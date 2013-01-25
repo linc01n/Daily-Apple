@@ -1,3 +1,9 @@
-﻿_.each([1, 2, 3], function(num) {
-  return console.log(num);
+﻿var Article;
+
+Article = new Class;
+
+Article.implement({
+  title: function(title) {
+    return this.title = title;
+  }
 });

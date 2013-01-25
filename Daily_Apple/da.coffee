@@ -1,1 +1,2 @@
-_.each [1,2,3], (num) -> console.log(num)
+Article = new Class
+Article.implement {title: (title)->this.title = title}
