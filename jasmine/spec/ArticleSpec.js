@@ -3,8 +3,8 @@
 
   describe("Article", function() {
     var article, title;
-    article = void 0;
-    title = void 0;
+    article = null;
+    title = null;
     beforeEach(function() {
       article = new Article();
       return title = "Test title";

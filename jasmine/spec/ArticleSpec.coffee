@@ -1,6 +1,6 @@
 describe "Article", ->
-  article = undefined
-  title = undefined
+  article = null
+  title = null
   beforeEach ->
     article = new Article()
     title = "Test title"
