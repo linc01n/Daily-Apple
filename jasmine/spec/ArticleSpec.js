@@ -6,7 +6,7 @@
     article = void 0;
     title = void 0;
     beforeEach(function() {
-      article = new Article();
+      article = new window.Article();
       return title = "Test title";
     });
     return it("should be able to set title", function() {
