@@ -2,16 +2,22 @@
 (function() {
 
   describe("Article", function() {
-    var article, title;
+    var article, content, title;
     article = null;
     title = null;
+    content = null;
     beforeEach(function() {
       article = new Article();
-      return title = "Test title";
+      title = "Test title";
+      return content = "Test content";
     });
-    return it("should be able to set title", function() {
+    it("should be able to set title", function() {
       article.set_title(title);
       return expect(article.title).toEqual(title);
+    });
+    return it("should be able to set content", function() {
+      article.set_content(content);
+      return expect(article.content).toEqual(content);
     });
   });
 
