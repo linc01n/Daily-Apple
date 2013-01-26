@@ -1,2 +1,2 @@
 Article = new Class()
-Article.implement {title: (title)->this.title = title}
+Article.implement {set_title: (title)->this.title = title}
