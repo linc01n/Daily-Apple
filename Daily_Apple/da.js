@@ -2,13 +2,17 @@
 (function() {
   var Article, root;
 
-  Article = new Class();
+  Article = (function() {
 
-  Article.implement({
-    set_title: function(title) {
+    function Article() {}
+
+    Article.prototype.set_title = function(title) {
       return this.title = title;
-    }
-  });
+    };
+
+    return Article;
+
+  })();
 
   root = typeof exports !== "undefined" && exports !== null ? exports : this;
 

@@ -1,8 +1,8 @@
-Article = new Class()
-Article.implement {
+class Article
+   constructor: () ->
+
    set_title: (title) ->
-                  this.title = title
-}
+      @title = title
 
 root = exports ? this
 root.Article = Article
