@@ -7,7 +7,11 @@
     function Article() {}
 
     Article.prototype.set_title = function(title) {
-      return this.title = title;
+      this.title = title;
+    };
+
+    Article.prototype.set_content = function(content) {
+      this.content = content;
     };
 
     return Article;

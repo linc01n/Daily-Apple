@@ -1,8 +1,9 @@
 class Article
-   constructor: () ->
+   constructor: ->
 
-   set_title: (title) ->
-      @title = title
+   set_title: (@title) ->
+
+   set_content: (@content) ->
 
 root = exports ? this
 root.Article = Article
