@@ -2,7 +2,7 @@ describe "Article", ->
   article = undefined
   title = undefined
   beforeEach ->
-    article = new window.Article()
+    article = new Article()
     title = "Test title"
 
   it "should be able to set title", ->
