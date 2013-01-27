@@ -5,5 +5,10 @@ class Article
 
    set_content: (@content) ->
 
+   set_date: (@date) ->
+
+   set_section: (@section) ->
+
 root = exports ? this
 root.Article = Article
+

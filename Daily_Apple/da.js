@@ -14,6 +14,14 @@
       this.content = content;
     };
 
+    Article.prototype.set_date = function(date) {
+      this.date = date;
+    };
+
+    Article.prototype.set_section = function(section) {
+      this.section = section;
+    };
+
     return Article;
 
   })();
