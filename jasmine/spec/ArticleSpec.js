@@ -2,22 +2,30 @@
 (function() {
 
   describe("Article", function() {
-    var article, content, title;
-    article = null;
-    title = null;
-    content = null;
+    var article, content, date, section, title;
+    article = title = content = date = section = null;
     beforeEach(function() {
       article = new Article();
       title = "Test title";
-      return content = "Test content";
+      content = "Test content";
+      date = new Date();
+      return section = "Test section";
     });
     it("should be able to set title", function() {
       article.set_title(title);
       return expect(article.title).toEqual(title);
     });
-    return it("should be able to set content", function() {
+    it("should be able to set content", function() {
       article.set_content(content);
       return expect(article.content).toEqual(content);
+    });
+    it("should be able to set date", function() {
+      article.set_date(date);
+      return expect(article.date).toEqual(date);
+    });
+    return it("should be able to set section", function() {
+      article.set_section(section);
+      return expect(article.section).toEqual(section);
     });
   });
 
