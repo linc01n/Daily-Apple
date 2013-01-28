@@ -1,11 +1,12 @@
 describe "Article", ->
-  article = title = content = date = section = null
+  article = title = content = date = section = html = null
   beforeEach ->
     article = new Article()
     title = "Test title"
     content = "Test content"
     date = new Date()
     section = "Test section"
+    html = ""
 
   it "should be able to set title", ->
     article.set_title title
@@ -22,3 +23,10 @@ describe "Article", ->
   it "should be able to set section", ->
     article.set_section section
     expect(article.section).toEqual section
+
+  it "should parse webpage to set all attr", ->
+    article.parse html
+    expect(article.title).toEqual title
+    expect(article.section).toEqual section
+    expect(article.content).toEqual content
+    expect(article.date).toEqual date
