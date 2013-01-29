@@ -6,7 +6,47 @@ describe "Article", ->
     content = "Test content"
     date = new Date()
     section = "Test section"
-    html = ""
+    html = """
+    <html>
+      <head></head>
+      <body>
+        <div class="container">
+          <div class="LHS">
+            <dix id="articleContent" class="LHSContent">
+              <div class="LHSBorderBox">
+                <table class="LinkTable">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <h1>Test Title</h1>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div id="masterContent" class="fontSize2">
+                <div class="ArticleContent_Outer">
+                  <div class="ArticleContent_Inner">
+                    <p class="ArticleIntro">Test Content 1</p>
+                  </div>
+                </div>
+                <div class="ArticleContent_Outer">
+                  <div class="ArticleContent_Inner">
+                    <p class="ArticleIntro">Test Content 2</p>
+                  </div>
+                </div>
+                <div class="ArticleContent_Outer">
+                  <div class="ArticleContent_Inner">
+                    <p class="ArticleIntro">Test Content 3</p>
+                  </div>
+                </div>
+              </div>
+            </dix>
+          </div>
+        </div>
+      </body>
+    </html>
+    """
 
   it "should be able to set title", ->
     article.set_title title
