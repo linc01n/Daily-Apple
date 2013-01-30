@@ -22,6 +22,12 @@
       this.section = section;
     };
 
+    Article.prototype.parse = function(html) {
+      var page;
+      page = $(html);
+      return this.set_title(page.find("#articleContent h1").text());
+    };
+
     return Article;
 
   })();
