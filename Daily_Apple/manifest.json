@@ -12,7 +12,7 @@
   "content_scripts": [
     {
       "matches": ["http://hk.apple.nextmedia.com/*/index/"],
-      "js": ["lib/underscore.1.4.3-min.js", "lib/mootools-1.4.5-min.js","da.js"]
+      "js": ["lib/underscore.1.4.3-min.js", "lib/mootools-1.4.5-min.js",  "lib/zepto.1.0.rc1-min.js","da.js"]
     }
   ],
   "permissions": [
