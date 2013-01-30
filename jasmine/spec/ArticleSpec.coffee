@@ -12,13 +12,13 @@ describe "Article", ->
       <body>
         <div class="container">
           <div class="LHS">
-            <dix id="articleContent" class="LHSContent">
+            <div id="articleContent" class="LHSContent">
               <div class="LHSBorderBox">
                 <table class="LinkTable">
                   <tbody>
                     <tr>
                       <td>
-                        <h1>Test Title</h1>
+                        <h1>Test title</h1>
                       </td>
                     </tr>
                   </tbody>
@@ -41,7 +41,7 @@ describe "Article", ->
                   </div>
                 </div>
               </div>
-            </dix>
+            </div>
           </div>
         </div>
       </body>
