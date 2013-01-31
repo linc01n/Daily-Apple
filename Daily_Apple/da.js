@@ -22,6 +22,10 @@
       this.section = section;
     };
 
+    Article.prototype.set_view_count = function(view_count) {
+      this.view_count = view_count;
+    };
+
     Article.prototype.parse = function(html) {
       var page, raw_content;
       page = $(html);

@@ -9,6 +9,8 @@ class Article
 
    set_section: (@section) ->
 
+   set_view_count: (@view_count) ->
+
    parse: (html) ->
       page = $(html)
       @set_title page.find("#articleContent h1").text()
