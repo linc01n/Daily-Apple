@@ -28,7 +28,7 @@
       this.set_title(page.find("#articleContent h1").text());
       raw_content = page.find("#masterContent .ArticleContent_Inner");
       return this.set_content(_.chain(raw_content).map(function(paragraph) {
-        return $(paragraph).find("p").removeAttr("class").prop("outerHTML");
+        return $(paragraph).removeAttr("class").prop("outerHTML");
       }).reduce(function(memo, obj) {
         return memo + obj;
       }).value());
