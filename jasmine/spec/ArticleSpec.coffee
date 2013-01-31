@@ -37,6 +37,7 @@ describe "Article", ->
                 </div>
                 <div class="ArticleContent_Outer">
                   <div class="ArticleContent_Inner">
+                    <h2>Sub Title</h2>
                     <p class="ArticleIntro">Test Content 3</p>
                   </div>
                 </div>
