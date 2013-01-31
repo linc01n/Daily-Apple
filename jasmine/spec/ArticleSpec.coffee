@@ -3,7 +3,7 @@ describe "Article", ->
   beforeEach ->
     article = new Article()
     title = "Test title"
-    content = "Test content"
+    content = "<p>Test Content 1</p><p>Test Content 2</p><p>Test Content 3</p>"
     date = new Date()
     section = "Test section"
     html = """
