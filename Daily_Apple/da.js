@@ -30,6 +30,7 @@
       var page, raw_content;
       page = $(html);
       this.set_title(page.find("#articleContent h1").text());
+      this.set_view_count(page.find("#articleContent .view").text());
       raw_content = page.find("#masterContent .ArticleContent_Inner");
       return this.set_content(_.chain(raw_content).map(function(paragraph) {
         return $(paragraph).removeAttr("class").prop("outerHTML");
