@@ -2,15 +2,16 @@
 (function() {
 
   describe("Article", function() {
-    var article, content, date, html, section, title;
-    article = title = content = date = section = html = null;
+    var article, content, date, html, section, title, view_count;
+    article = title = content = date = section = view_count = html = null;
     beforeEach(function() {
       article = new Article();
       title = "Test title";
       content = "<p>Test Content 1</p><p>Test Content 2</p><p>Test Content 3</p>";
       date = new Date();
       section = "Test section";
-      return html = "<html>\n  <head></head>\n  <body>\n    <div class=\"container\">\n      <div class=\"LHS\">\n        <div id=\"articleContent\" class=\"LHSContent\">\n          <div class=\"LHSBorderBox\">\n            <table class=\"LinkTable\">\n              <tbody>\n                <tr>\n                  <td>\n                    <h1>Test title</h1>\n                  </td>\n                </tr>\n              </tbody>\n            </table>\n          </div>\n          <div id=\"masterContent\" class=\"fontSize2\">\n            <div class=\"ArticleContent_Outer\">\n              <div class=\"ArticleContent_Inner\">\n                <p class=\"ArticleIntro\">Test Content 1</p>\n              </div>\n            </div>\n            <div class=\"ArticleContent_Outer\">\n              <div class=\"ArticleContent_Inner\">\n                <p class=\"ArticleIntro\">Test Content 2</p>\n              </div>\n            </div>\n            <div class=\"ArticleContent_Outer\">\n              <div class=\"ArticleContent_Inner\">\n                <h2>Sub Title</h2>\n                <p class=\"ArticleIntro\">Test Content 3</p>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </body>\n</html>";
+      view_count = "1,234";
+      return html = "<html>\n  <head></head>\n  <body>\n    <div class=\"container\">\n      <div class=\"LHS\">\n        <div id=\"articleContent\" class=\"LHSContent\">\n          <div class=\"LHSBorderBox\">\n            <table class=\"LinkTable\">\n              <tbody>\n                <tr>\n                  <td>\n                    <h1>Test title</h1>\n                  </td>\n                  <td>\n                    <div class=\"view\">1,234</div>\n                  </td>\n                </tr>\n              </tbody>\n            </table>\n          </div>\n          <div id=\"masterContent\" class=\"fontSize2\">\n            <div class=\"ArticleContent_Outer\">\n              <div class=\"ArticleContent_Inner\">\n                <p class=\"ArticleIntro\">Test Content 1</p>\n              </div>\n            </div>\n            <div class=\"ArticleContent_Outer\">\n              <div class=\"ArticleContent_Inner\">\n                <p class=\"ArticleIntro\">Test Content 2</p>\n              </div>\n            </div>\n            <div class=\"ArticleContent_Outer\">\n              <div class=\"ArticleContent_Inner\">\n                <h2>Sub Title</h2>\n                <p class=\"ArticleIntro\">Test Content 3</p>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </body>\n</html>";
     });
     it("should be able to set title", function() {
       article.set_title(title);
@@ -28,11 +29,16 @@
       article.set_section(section);
       return expect(article.section).toEqual(section);
     });
+    it("should be able to set view count", function() {
+      article.set_view_count(view_count);
+      return expect(article.view_count).toEqual(view_count);
+    });
     return it("should parse webpage to set all attr", function() {
       article.parse(html);
       expect(article.title).toEqual(title);
       expect(article.section).toEqual(section);
       expect(article.content).toEqual(content);
+      expect(article.view_count).toEqual(view_count);
       return expect(article.date).toEqual(date);
     });
   });
