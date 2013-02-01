@@ -33,7 +33,11 @@
       this.set_view_count(page.find("#articleContent .view").text());
       raw_content = page.find("#masterContent .ArticleContent_Inner");
       return this.set_content(_.chain(raw_content).map(function(paragraph) {
-        return $(paragraph).removeAttr("class").prop("outerHTML");
+        return $(paragraph).children();
+      }).map(function(child) {
+        return $(child).removeAttr("class").parent().html(function(idx, html) {
+          return html.replace(/^\s+|\s+$/g, "").replace(/>\s+</g, "><");
+        }).html();
       }).reduce(function(memo, obj) {
         return memo + obj;
       }).value());
