@@ -3,8 +3,8 @@ describe "Article", ->
   beforeEach ->
     article = new Article()
     title = "Test title"
-    content = "<p>Test Content 1</p><p>Test Content 2</p><p>Test Content 3</p>"
-    date = new Date()
+    content = "<p>Test Content 1</p><p>Test Content 2</p><h2>Sub Title</h2><p>Test Content 3</p>"
+    date = "2013年01月31日"
     section = "Test section"
     view_count = "1,234"
     html = """
@@ -13,6 +13,11 @@ describe "Article", ->
       <body>
         <div class="container">
           <div class="LHS">
+            <div class="LHSTitle page_news">
+              <div class="LHSTitle_inner">
+                <div class="SelectHdate">2013年01月31日</div>
+              </div>
+            </div>
             <div id="articleContent" class="LHSContent">
               <div class="LHSBorderBox">
                 <table class="LinkTable">
