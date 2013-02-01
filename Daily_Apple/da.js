@@ -32,7 +32,7 @@
       this.set_title(page.find("#articleContent h1").text());
       this.set_view_count(page.find("#articleContent .view").text());
       raw_content = page.find("#masterContent .ArticleContent_Inner");
-      return this.set_content(_.chain(raw_content).map(function(paragraph) {
+      this.set_content(_.chain(raw_content).map(function(paragraph) {
         return $(paragraph).children();
       }).map(function(child) {
         return $(child).removeAttr("class").parent().html(function(idx, html) {
@@ -41,6 +41,7 @@
       }).reduce(function(memo, obj) {
         return memo + obj;
       }).value());
+      return this.set_date(page.find(".LHSTitle_inner .SelectHdate").text());
     };
 
     return Article;

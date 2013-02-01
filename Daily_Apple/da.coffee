@@ -19,6 +19,7 @@ class Article
       @set_content _.chain(raw_content).map((paragraph) -> $(paragraph).children()).map((child) ->
                      $(child).removeAttr("class").parent().html((idx, html) -> html.replace(/^\s+|\s+$/g,"").replace(/>\s+</g, "><")).html()).reduce((memo, obj) ->
                      memo + obj).value()
+      @set_date page.find(".LHSTitle_inner .SelectHdate").text()
 
 root = exports ? this
 root.Article = Article
