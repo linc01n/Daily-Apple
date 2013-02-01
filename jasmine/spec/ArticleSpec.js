@@ -36,7 +36,6 @@
     return it("should parse webpage to set all attr", function() {
       article.parse(html);
       expect(article.title).toEqual(title);
-      expect(article.section).toEqual(section);
       expect(article.content).toEqual(content);
       expect(article.view_count).toEqual(view_count);
       return expect(article.date).toEqual(date);

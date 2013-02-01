@@ -81,7 +81,6 @@ describe "Article", ->
   it "should parse webpage to set all attr", ->
     article.parse html
     expect(article.title).toEqual title
-    expect(article.section).toEqual section
     expect(article.content).toEqual content
     expect(article.view_count).toEqual view_count
     expect(article.date).toEqual date
