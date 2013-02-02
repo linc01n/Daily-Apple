@@ -11,6 +11,8 @@ class Article
 
    set_view_count: (@view_count) ->
 
+
+class AppleDaily extends Article
    parse: (html) ->
       page = $(html)
       @set_title page.find("#articleContent h1").text()
@@ -23,4 +25,5 @@ class Article
 
 root = exports ? this
 root.Article = Article
+root.AppleDaily = AppleDaily
 
