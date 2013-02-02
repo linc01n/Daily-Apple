@@ -1,7 +1,7 @@
-describe "Article", ->
+describe "AppleDaily", ->
   article = title = content = date = section = view_count = html = null
   beforeEach ->
-    article = new Article()
+    article = new AppleDaily()
     title = "Test title"
     content = "<p>Test Content 1</p><p>Test Content 2</p><h2>Sub Title</h2><p>Test Content 3</p>"
     date = "2013年01月31日"
