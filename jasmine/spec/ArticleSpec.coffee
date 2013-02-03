@@ -80,7 +80,6 @@ describe "AppleDaily", ->
 
   describe "Parser", ->
     beforeEach ->
-      article = new AppleDaily()
       article.parse html
     it "should set title", ->
       expect(article.title).toEqual title

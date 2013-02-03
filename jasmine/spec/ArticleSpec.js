@@ -35,7 +35,6 @@
     });
     return describe("Parser", function() {
       beforeEach(function() {
-        article = new AppleDaily();
         return article.parse(html);
       });
       it("should set title", function() {
