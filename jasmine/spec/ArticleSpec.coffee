@@ -78,9 +78,15 @@ describe "AppleDaily", ->
     article.set_view_count view_count
     expect(article.view_count).toEqual view_count
 
-  it "should parse webpage to set all attr", ->
-    article.parse html
-    expect(article.title).toEqual title
-    expect(article.content).toEqual content
-    expect(article.view_count).toEqual view_count
-    expect(article.date).toEqual date
+  describe "Parser", ->
+    beforeEach ->
+      article = new AppleDaily()
+      article.parse html
+    it "should set title", ->
+      expect(article.title).toEqual title
+    it "should set content", ->
+      expect(article.content).toEqual content
+    it "should set view count", ->
+      expect(article.view_count).toEqual view_count
+    it "should set date", ->
+      expect(article.date).toEqual date

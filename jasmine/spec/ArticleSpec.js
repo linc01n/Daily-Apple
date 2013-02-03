@@ -33,12 +33,23 @@
       article.set_view_count(view_count);
       return expect(article.view_count).toEqual(view_count);
     });
-    return it("should parse webpage to set all attr", function() {
-      article.parse(html);
-      expect(article.title).toEqual(title);
-      expect(article.content).toEqual(content);
-      expect(article.view_count).toEqual(view_count);
-      return expect(article.date).toEqual(date);
+    return describe("Parser", function() {
+      beforeEach(function() {
+        article = new AppleDaily();
+        return article.parse(html);
+      });
+      it("should set title", function() {
+        return expect(article.title).toEqual(title);
+      });
+      it("should set content", function() {
+        return expect(article.content).toEqual(content);
+      });
+      it("should set view count", function() {
+        return expect(article.view_count).toEqual(view_count);
+      });
+      return it("should set date", function() {
+        return expect(article.date).toEqual(date);
+      });
     });
   });
 
