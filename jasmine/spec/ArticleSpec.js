@@ -34,7 +34,9 @@
       return expect(article.view_count).toEqual(view_count);
     });
     return describe("Parser", function() {
+      article = null;
       beforeEach(function() {
+        article = new AppleDaily();
         return article.parse(html);
       });
       it("should set title", function() {
