@@ -10,22 +10,27 @@
 
     Article.prototype.set_title = function(title) {
       this.title = title;
+      return this.title = $.trim(this.title);
     };
 
     Article.prototype.set_content = function(content) {
       this.content = content;
+      return this.content = $.trim(this.content);
     };
 
     Article.prototype.set_date = function(date) {
       this.date = date;
+      return this.date = $.trim(this.date);
     };
 
     Article.prototype.set_section = function(section) {
       this.section = section;
+      return this.section = $.trim(this.section);
     };
 
     Article.prototype.set_view_count = function(view_count) {
       this.view_count = view_count;
+      return this.view_count = $.trim(this.view_count);
     };
 
     return Article;

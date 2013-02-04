@@ -2,14 +2,19 @@ class Article
    constructor: ->
 
    set_title: (@title) ->
+      @title = $.trim(@title)
 
    set_content: (@content) ->
+      @content = $.trim(@content)
 
    set_date: (@date) ->
+      @date = $.trim(@date)
 
    set_section: (@section) ->
+      @section = $.trim(@section)
 
    set_view_count: (@view_count) ->
+      @view_count = $.trim(@view_count)
 
 
 class AppleDaily extends Article
