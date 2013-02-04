@@ -2,11 +2,11 @@ describe "AppleDaily", ->
   article = title = content = date = section = view_count = html = null
   beforeEach ->
     article = new AppleDaily()
-    title = "Test title"
+    title = "   Test title     "
     content = "<p>Test Content 1</p><p>Test Content 2</p><h2>Sub Title</h2><p>Test Content 3</p>"
-    date = "2013年01月31日"
+    date = "  2013年01月31日  "
     section = "Test section"
-    view_count = "1,234"
+    view_count = "  1,234   "
     html = """
     <html>
       <head></head>
@@ -15,7 +15,7 @@ describe "AppleDaily", ->
           <div class="LHS">
             <div class="LHSTitle page_news">
               <div class="LHSTitle_inner">
-                <div class="SelectHdate">2013年01月31日</div>
+                <div class="SelectHdate">   2013年01月31日   </div>
               </div>
             </div>
             <div id="articleContent" class="LHSContent">
@@ -24,10 +24,10 @@ describe "AppleDaily", ->
                   <tbody>
                     <tr>
                       <td>
-                        <h1>Test title</h1>
+                        <h1>   Test title    </h1>
                       </td>
                       <td>
-                        <div class="view">1,234</div>
+                        <div class="view">   1,234   </div>
                       </td>
                     </tr>
                   </tbody>
@@ -60,7 +60,7 @@ describe "AppleDaily", ->
 
   it "should be able to set title", ->
     article.set_title title
-    expect(article.title).toEqual title
+    expect(article.title).toEqual "Test title"
 
   it "should be able to set content", ->
     article.set_content content
@@ -68,7 +68,7 @@ describe "AppleDaily", ->
 
   it "should be able to set date", ->
     article.set_date date
-    expect(article.date).toEqual date
+    expect(article.date).toEqual "2013年01月31日"
 
   it "should be able to set section", ->
     article.set_section section
@@ -76,7 +76,7 @@ describe "AppleDaily", ->
 
   it "should be able to set view count", ->
     article.set_view_count view_count
-    expect(article.view_count).toEqual view_count
+    expect(article.view_count).toEqual "1,234"
 
   describe "Parser", ->
     article = null
@@ -84,10 +84,10 @@ describe "AppleDaily", ->
       article = new AppleDaily()
       article.parse html
     it "should set title", ->
-      expect(article.title).toEqual title
+      expect(article.title).toEqual "Test title"
     it "should set content", ->
       expect(article.content).toEqual content
     it "should set view count", ->
-      expect(article.view_count).toEqual view_count
+      expect(article.view_count).toEqual "1,234"
     it "should set date", ->
-      expect(article.date).toEqual date
+      expect(article.date).toEqual "2013年01月31日"
