@@ -1,6 +1,10 @@
 describe "AppleDaily", ->
   article = title = content = date = section = view_count = html = null
   beforeEach ->
+    this.addMatchers
+      childNotContainImg: ()->
+        not $(this.actual).find("img")
+
     article = new AppleDaily()
     title = "   Test title     "
     content = "<p>Test Content 1</p><p>Test Content 2</p><h2>Sub Title</h2><p>Test Content 3</p>"
@@ -47,7 +51,7 @@ describe "AppleDaily", ->
                 <div class="ArticleContent_Outer">
                   <div class="ArticleContent_Inner">
                     <h2>Sub Title</h2>
-                    <p class="ArticleIntro">Test Content 3</p>
+                    <p class="ArticleIntro">Test Content 3<img src="dummy.jpg" alt="dummy"></p>
                   </div>
                 </div>
               </div>
@@ -65,6 +69,7 @@ describe "AppleDaily", ->
   it "should be able to set content", ->
     article.set_content content
     expect(article.content).toEqual content
+    expect(article.content)
 
   it "should be able to set date", ->
     article.set_date date
@@ -91,3 +96,5 @@ describe "AppleDaily", ->
       expect(article.view_count).toEqual "1,234"
     it "should set date", ->
       expect(article.date).toEqual "2013年01月31日"
+    it "should not include img tag in content", ->
+      expect(article.content).childNotContainImg
