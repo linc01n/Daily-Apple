@@ -51,11 +51,11 @@
       it("should set content", function() {
         return expect(article.content).toEqual(content);
       });
-      it("should set view count", function() {
-        return expect(article.view_count).toEqual("1,234");
-      });
       it("should set date", function() {
         return expect(article.date).toEqual("2013年01月31日");
+      });
+      it("should set view count", function() {
+        return expect(article.view_count).toEqual("1,234");
       });
       return it("should not include img tag in content", function() {
         return expect(article.content).childNotContainImg;

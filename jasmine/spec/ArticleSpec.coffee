@@ -92,9 +92,9 @@ describe "AppleDaily", ->
       expect(article.title).toEqual "Test title"
     it "should set content", ->
       expect(article.content).toEqual content
-    it "should set view count", ->
-      expect(article.view_count).toEqual "1,234"
     it "should set date", ->
       expect(article.date).toEqual "2013年01月31日"
+    it "should set view count", ->
+      expect(article.view_count).toEqual "1,234"
     it "should not include img tag in content", ->
       expect(article.content).childNotContainImg
