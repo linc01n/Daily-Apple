@@ -53,6 +53,10 @@
       raw_content = page.find("#masterContent .ArticleContent_Inner");
       this.set_content(_.chain(raw_content).map(function(paragraph) {
         return $(paragraph).children();
+      }).map(function(node) {
+        return $(node).contents().filter(function() {
+          return this.nodeType === 8 || this.nodeName === "IMG";
+        });
       }).map(function(child) {
         return $(child).removeAttr("class").parent().html(function(idx, html) {
           return html.replace(/^\s+|\s+$/g, "").replace(/>\s+</g, "><");

@@ -23,9 +23,23 @@ class AppleDaily extends Article
       @set_title page.find("#articleContent h1").text()
       @set_view_count page.find("#articleContent .view").text()
       raw_content = page.find("#masterContent .ArticleContent_Inner")
-      @set_content _.chain(raw_content).map((paragraph) -> $(paragraph).children()).map((child) ->
-                     $(child).removeAttr("class").parent().html((idx, html) -> html.replace(/^\s+|\s+$/g,"").replace(/>\s+</g, "><")).html()).reduce((memo, obj) ->
-                     memo + obj).value()
+      @set_content(
+         _.chain(raw_content).map(
+            (paragraph) ->
+               $(paragraph).children()).map(
+                  (node) ->
+                     $(node).contents().filter(
+                        () ->
+                           this.nodeType == 8 or this.nodeName == "IMG")).map(
+                           (child) ->
+                              $(child).removeAttr("class").parent().html(
+                                 (idx, html) ->
+                                    html.replace(/^\s+|\s+$/g,"").replace(/>\s+</g, "><")).html()).reduce(
+                                    (memo, obj) ->
+                                       memo + obj
+                                       ).value()
+         )
+
       @set_date page.find(".LHSTitle_inner .SelectHdate").text()
 
 root = exports ? this
