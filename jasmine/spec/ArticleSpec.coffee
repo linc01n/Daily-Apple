@@ -51,6 +51,7 @@ describe "AppleDaily", ->
                 <div class="ArticleContent_Outer">
                   <div class="ArticleContent_Inner">
                     <h2>Sub Title</h2>
+                    <!-- Comment -->
                     <p class="ArticleIntro">Test Content 3<img src="dummy.jpg" alt="dummy"></p>
                   </div>
                 </div>
