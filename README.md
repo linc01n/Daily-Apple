@@ -14,10 +14,7 @@ After installing the crx file, you can choose any news article then it will load
 TODO
 ----
 
-1. Add hitrate calculation on each article.
-2. Add Google Analytics.
-3. Write User Manual.
-4. Add a loading screen.
+1. Version 2.0
 
 Changelog
 ---------
