@@ -45,7 +45,7 @@ Credit
 
 ### Javascript Library
 
-[jQuery](http://jquery.com/) - New Wave JavaScript
+[Zepto.js](http://zeptojs.com/) - Zepto is a minimalist JavaScript library for modern browsers with a largely jQuery-compatible API
 
 [AJAX Queue/Cache/Abort/Block Manager](http://www.protofunc.com/scripts/jquery/ajaxManager/)
 
