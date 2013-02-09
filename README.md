@@ -27,13 +27,13 @@ Changelog
 
 1.0.4		Add Back to top link
 
-1.0.3       Jump to the news of address bar
+1.0.3   Jump to the news of address bar
 
-1.0.2       Typo fix
+1.0.2   Typo fix
 
-1.0.1       Remove source photo from code folder
+1.0.1   Remove source photo from code folder
 
-1.0         Initial release
+1.0     Initial release
 
 License
 -------
